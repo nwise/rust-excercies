@@ -1,17 +1,16 @@
 fn main() {
   for num in range(1i, 101) {
-    let mut answer =
-      if div_by_fifteen(num) { "FizzBuzz" }
-      else if div_by_three(num) { "Fizz" }
-      else if div_by_five(num) { "Buzz" }
-      else { num };
-
-    println!("{:s}", answer);
+    println!("{:s}",
+        if div_by_fifteen(num) { "FizzBuzz".to_string() }
+        else if div_by_three(num) { "Fizz".to_string() }
+        else if div_by_five(num) { "Buzz".to_string() }
+        else { num.to_string() }
+        );
   }
 }
 
 fn div_by_fifteen(num: int) -> bool {
-   num % 15 == 0
+  num % 15 == 0
 }
 
 fn div_by_three(num: int) -> bool {
